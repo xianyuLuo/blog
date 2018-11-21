@@ -89,12 +89,14 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
 <meta property="og:description" content="什么是TTL？就是用来记录IP数据包从发出经过了多少路由！
 TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由器时，TTL的值就会减1，当为0时，就把这个数据包给丢弃。较老的系统的TTL初始化值为15或32，现在一般的为255。
 为什么需要TTL？为了防止IP数据包在选路时无休止的在网络中流动。">
-<meta property="og:updated_time" content="2018-11-21T06:13:20.029Z">
+<meta property="og:image" content="http://dl-blog.laoxianyu.cn/weixindy.jpg">
+<meta property="og:updated_time" content="2018-11-21T10:04:48.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TTL">
 <meta name="twitter:description" content="什么是TTL？就是用来记录IP数据包从发出经过了多少路由！
 TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由器时，TTL的值就会减1，当为0时，就把这个数据包给丢弃。较老的系统的TTL初始化值为15或32，现在一般的为255。
 为什么需要TTL？为了防止IP数据包在选路时无休止的在网络中流动。">
+<meta name="twitter:image" content="http://dl-blog.laoxianyu.cn/weixindy.jpg">
 
 
 
@@ -431,7 +433,11 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
 </code></pre><p><em>那么我们该如何判断是否已经到达目的主机了呢</em>？</p>
 <pre><code>Traceroute程序发送一份UDP数据报给目的主机，但它选择一个不可能的值作为UDP端口号（大于30000），使目的主机的任何一个应用程序都不可能使用该端口。因为，当该数据报到达时，将使目的主机的UDP模块产生一份“端口不可达”错误的ICMP报文。这样，Traceroute程序所要做的就是区分接收到的ICMP报文是超时还是端口不可达，以判断什么时候结束。
 </code></pre><p>看到这儿，是不是觉得Traceroute有点老奸巨猾呢？没错，就是的！</p>
-<font color="#ff1201">技术交流可加QQ群：774332965</font>
+<font color="#ff1201">技术交流可加QQ群：<strong>774332965</strong><br></font>
+
+<font color="#ff1201">微信订阅号同步：<strong>IT运维那点儿事</strong></font>
+
+<p><img src="http://dl-blog.laoxianyu.cn/weixindy.jpg" alt="weixin"></p>
 
       
     </div>

@@ -93,7 +93,8 @@
 (2)数据成块类型例如ftp，这种类型的协议要求TCP能尽量的运载数据，把数据的吞吐量做到最大，并尽可能的提高效率。针对这">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/tcp%E7%AA%97%E5%8F%A31.png">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/tcp%E7%AA%97%E5%8F%A32.png">
-<meta property="og:updated_time" content="2018-11-21T06:13:20.029Z">
+<meta property="og:image" content="http://dl-blog.laoxianyu.cn/weixindy.jpg">
+<meta property="og:updated_time" content="2018-11-21T10:04:17.245Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tcp交互数据和块数据处理">
 <meta name="twitter:description" content="前言目前建立在TCP协议上的网络协议特别多，有telnet，ssh，有ftp，有http等等。这些协议又可以根据数据吞吐量来大致分成两大类：
@@ -450,7 +451,11 @@
 </ul>
 <p>TCP就是用这个窗口，慢慢的从数据的左边移动到右边，把处于窗口范围内的数据发送出去（但不用发送所有，只是处于窗口内的数据可以发送。）。这就是窗口的意义。<br><img src="http://dl-blog.laoxianyu.cn/tcp%E7%AA%97%E5%8F%A32.png" alt="tcp_chuangkou2"></p>
 <h4 id="数据拥塞"><a href="#数据拥塞" class="headerlink" title="数据拥塞"></a>数据拥塞</h4><p>&ensp;&ensp;&ensp;&ensp;上面的策略用于局域网内传输还可以，但是用在广域网中就可能会出现问题，最大的问题就是当传输时出现了瓶颈所产生的大量数据拥塞问题，为了解决这个问题，TCP发送方需要确认连接双方的线路的数据最大吞吐量是多少。这就是所谓的拥塞窗口。<br>&ensp;&ensp;&ensp;&ensp;拥塞窗口的原理很简单，TCP发送方首先发送一个数据报，然后等待对方的回应，得到回应后就把这个窗口的大小加倍，然后连续发送两个数据报，等到对方回应以后，再把这个窗口加倍（先是2的指数倍，到一定程度后就变成线行增长，这就是所谓的TCP慢启动），发送更多的数据报，直到出现超时错误，这样，发送端就了解到了通信双方的线路承载能力，也就确定了拥塞窗口的大小，发送方就用这个拥塞窗口的大小发送数据。<br>平时在下载电影的时候，仔细观察应该不难发现，速度先从几十K到100K，然后到200K，再到400K，后面慢慢变的稳定，这个速度就是拥塞窗口的大小。</p>
-<font color="#ff1201">技术交流可加QQ群：774332965</font>
+<font color="#ff1201">技术交流可加QQ群：<strong>774332965</strong><br></font>
+
+<font color="#ff1201">微信订阅号同步：<strong>IT运维那点儿事</strong></font>
+
+<p><img src="http://dl-blog.laoxianyu.cn/weixindy.jpg" alt="weixin"></p>
 
       
     </div>

@@ -89,7 +89,8 @@ IP协议简介IP协议是TCP/IP协议的核心，所有的TCP，UDP，IMCP，IGC
 IP协议简介IP协议是TCP/IP协议的核心，所有的TCP，UDP，IMCP，IGCP的数据都以IP数据格式传输。要注意的是，IP不是可靠的协议，这是说，IP协议没有提供一种数据未传达以后的">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/ip.png">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/protocols.png">
-<meta property="og:updated_time" content="2018-11-21T06:13:20.029Z">
+<meta property="og:image" content="http://dl-blog.laoxianyu.cn/weixindy.jpg">
+<meta property="og:updated_time" content="2018-11-21T10:03:44.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IP协议">
 <meta name="twitter:description" content="前言    TCP/IP协议是一个很大协议族，里面包含了IP协议、TCP协议、UDP协议、ICMP协议、IGMP……等等的协议；而IP、TCP就是其中很重要两个的协议。今天我们就来一起简单的分析一下IP协议。
@@ -435,7 +436,11 @@ IP协议简介IP协议是TCP/IP协议的核心，所有的TCP，UDP，IMCP，IGC
 <p>最特殊的情况是目的主机和主机直连，那么主机根本不用寻找路由，直接把数据传递过去就可以了。至于是怎么直接传递的，这就要靠ARP协议了。详细请查考<a href="http://www.laoxianyu.cn/2016/11/21/ARP%E5%8D%8F%E8%AE%AE/" target="_blank" rel="external">LaoXianYu的arp</a></p>
 <p>稍微一般一点的情况是，主机通过若干个路由器(router)和目的主机连接。那么路由器就要通过ip包的信息来为ip包寻找到一个合适的目标来进行传递，比如合适的主机，或者合适的路由。路由器或者主机将会用如下的方式来处理某一个IP数据包</p>
 <p>如果IP数据包的TTL（生命周期）以到，则该IP数据包就被抛弃。<br>    1、搜索路由表，优先搜索匹配主机，如果能找到和IP地址完全一致的目标主机，则将该包发向目标主机<br>    2、搜索路由表，如果匹配主机失败，则匹配同子网的路由器，这需要“子网掩码(1.3.)”的协助。如果找到路由器，则将该包发向路由器。<br>    3、搜索路由表，如果匹配同子网路由器失败，则匹配同网号（第一章有讲解）路由器，如果找到路由器，则将该包发向路由器。<br>    4、搜索陆游表，如果以上都失败了，就搜索默认路由，如果默认路由存在，则发包<br>    5、如果都失败了，就丢掉这个包。<br>这再一次证明了，ip包是不可靠的。因为它不保证送达。</p>
-<font color="#ff1201">技术交流可加QQ群：774332965</font>
+<font color="#ff1201">技术交流可加QQ群：<strong>774332965</strong><br></font>
+
+<font color="#ff1201">微信订阅号同步：<strong>IT运维那点儿事</strong></font>
+
+<p><img src="http://dl-blog.laoxianyu.cn/weixindy.jpg" alt="weixin"></p>
 
       
     </div>

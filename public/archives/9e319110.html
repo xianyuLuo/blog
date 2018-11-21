@@ -88,7 +88,8 @@
 <meta property="og:description" content="什么是DNS解析？就是把域名转换为IP地址的一个过程
 为什么需要DNS解析？以前都是靠 /etc/hosts 文件来解析域名的，每解析一个域名就需要在文件里面添加一条对应记录。后来由于互联网的迅速发展，域名已经数不胜数了。如果这个时候还是一条一条记录的写在/etc/hosts 文件里面的话，那这个文件估计就超级大了。于是就有了DNS解析，由DNS服务器来解析域名。">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/dns%E8%A7%A3%E6%9E%90.png">
-<meta property="og:updated_time" content="2018-11-21T06:13:20.029Z">
+<meta property="og:image" content="http://dl-blog.laoxianyu.cn/weixindy.jpg">
+<meta property="og:updated_time" content="2018-11-21T10:02:46.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DNS解析">
 <meta name="twitter:description" content="什么是DNS解析？就是把域名转换为IP地址的一个过程
@@ -432,7 +433,11 @@
 <h4 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h4><p>解析 www.google.com.（正规来说这后面是还有一个点的，只是一般都省略了）这个域名；我的DNS服务器是电信的114.114.114.114<br>解析步骤：<br>    1、我自己的电脑去访问www.google.com的时候，就问114 “你帮我找找www.google.com服务器的IP地址”<br>    2、然后114就去找到13台根服务器中的一台根服务器，问“你知道www.google.com的IP地址嘛?”，然后根服务器就说：“不知道，但是我知道.com的服务器IP，要不你去问问它？”<br>    3、接着114就找到.com的服务器问：“你知道www.google.com的IP嘛？”，然后.com服务器就说：“我不知道，但是我知道google.com的服务器IP，要不你去问问它？”<br>    4、再接着114就找到google.com的服务器问：“你知道www.google.com的IP嘛？”，然后google.com服务器就回答道“知道呀”，然后把IP地址告诉114<br>    5、历经千辛万苦终于找到了，114就会暂时把这个地址缓存一段时间，当有人再来问它的时候，它就不用那么辛苦去找了，直接从缓存里面调出来就是了<br>    6、最后114就把www.google.com的IP地址告诉我了，然后我就去向那个IP地址请求资源去了</p>
 <h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><pre><code>我去问114，让它给我www.google.com的服务器地址，这样的方法就叫做递归，或者也可以叫做转发吧！
 114去找根服务器，一台台挨着问的这个过程就叫做迭代！
-</code></pre><font color="#ff1201">技术交流可加QQ群：774332965</font>
+</code></pre><font color="#ff1201">技术交流可加QQ群：<strong>774332965</strong><br></font>
+
+<font color="#ff1201">微信订阅号同步：<strong>IT运维那点儿事</strong></font>
+
+<p><img src="http://dl-blog.laoxianyu.cn/weixindy.jpg" alt="weixin"></p>
 
       
     </div>
