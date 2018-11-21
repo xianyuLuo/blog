@@ -49,4 +49,9 @@ __对应TCP/IP协议族协议__：IEEE802
 
 
 
-<font color=#ff1201>技术交流可加QQ群：774332965</font>
+<font color=#ff1201>技术交流可加QQ群：**774332965**<br></font>
+
+<font color=#ff1201>微信订阅号同步：**IT运维那点儿事**</font>
+
+![weixin](http://dl-blog.laoxianyu.cn/weixindy.jpg)
+

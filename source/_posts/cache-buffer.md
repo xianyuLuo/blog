@@ -19,4 +19,9 @@ categories: 运维
 所以说Buffer是位于存储速度不同步的设备之间的一个缓冲区。
 
 
-<font color=#ff1201>技术交流可加QQ群：774332965</font>
+<font color=#ff1201>技术交流可加QQ群：**774332965**<br></font>
+
+<font color=#ff1201>微信订阅号同步：**IT运维那点儿事**</font>
+
+![weixin](http://dl-blog.laoxianyu.cn/weixindy.jpg)
+

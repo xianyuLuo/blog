@@ -22,5 +22,9 @@ Ping命令就是利用这两种类型的ICMP数据包。
 一台主机向一个节点发送一个Type=8的ICMP报文，如果途中没有异常（例如被路由器丢弃、目标不回应ICMP或传输失败），则目标返回Type=0的ICMP报文，说明这台主机存在，更详细的traceroute通过计算ICMP报文通过的节点来确定主机与目标之间的网络距离。
 （在上一篇中说道Tracroute利用了TTL，同时traceroute也利用了ICMP）
 
+<font color=#ff1201>技术交流可加QQ群：**774332965**<br></font>
 
-<font color=#ff1201>技术交流可加QQ群：774332965</font>
+<font color=#ff1201>微信订阅号同步：**IT运维那点儿事**</font>
+
+![weixin](http://dl-blog.laoxianyu.cn/weixindy.jpg)
+

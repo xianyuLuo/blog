@@ -184,4 +184,9 @@ traefik测试实例编排：https://gitlab.ilongyuan.cn/ops/k8s-compose/tree/mas
 traefik官网：https://docs.traefik.io/
 
 
-<font color=#ff1201>技术交流可加QQ群：774332965</font>
+<font color=#ff1201>技术交流可加QQ群：**774332965**<br></font>
+
+<font color=#ff1201>微信订阅号同步：**IT运维那点儿事**</font>
+
+![weixin](http://dl-blog.laoxianyu.cn/weixindy.jpg)
+

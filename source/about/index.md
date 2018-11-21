@@ -12,10 +12,15 @@ date: 2018-04-06 17:29:55
 ### 工作经历
 
 * 2016年11月——至今 成都龙渊网络科技有限公司 运维工程师
-      大数据环境支持，spark / hadoop / es
-      基础研发部门的环境搭建及应用部署、CICD实施和维护
-      运维监控系统、账务管理及RMS系统完善
-      游戏业务运维
+
+### 工作内容
+
+* 各云平台维护；ali / hw / aws / ks / qcloud / ucloud / qingcloud / ws 
+* 基础研发部门的环境支持、应用部署、CICD实施和维护；gitlab / gitlab-ci / drone / jenkins / kubernetes / traefik / konga
+* 大数据环境支持和维护；spark / hadoop / es / kibana
+* 运维监控系统完善；zabbix / prometheus / send_msg
+* 游戏业务运维；kubernetes / prometheus / jenkins / gitlab-ci
+* 运维账务管理系统RMS完善；python / mysql / rancher / kubernetes
 
 
 ### 近况

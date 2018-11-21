@@ -32,4 +32,9 @@ categories: [网络]
 	TIME_WAIT这个东西有没有好处呢？那有没有坏处呢？
 	答案是都有的。好处就是它保证了在断开连接之前数据传输的完整性；那坏处是什么呢？想象一下，如果是服务器主动发起的FIN报文，那它就会处于TIME_WAIT状态，那肯定就会占用一定系统资源。想象一下，如果并发量超级大的时候，那服务器岂不是会崩溃了。
 
-<font color=#ff1201>技术交流可加QQ群：774332965</font>
+<font color=#ff1201>技术交流可加QQ群：**774332965**<br></font>
+
+<font color=#ff1201>微信订阅号同步：**IT运维那点儿事**</font>
+
+![weixin](http://dl-blog.laoxianyu.cn/weixindy.jpg)
+
