@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/public/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -48,21 +48,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/public/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+<link href="/public/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon-next.png?v=5.1.3">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32-next.png?v=5.1.3">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/public/images/logo.svg?v=5.1.3" color="#222">
 
 
 
@@ -86,7 +86,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="tcp交互数据和块数据处理">
 <meta property="og:url" content="http://laoxianyu.cn/archives/d8cfbc13.html">
-<meta property="og:site_name" content="xianyuLuo Blog">
+<meta property="og:site_name" content="IT运维那点儿事">
 <meta property="og:description" content="前言目前建立在TCP协议上的网络协议特别多，有telnet，ssh，有ftp，有http等等。这些协议又可以根据数据吞吐量来大致分成两大类：
 
 (1)交互数据类型例如telnet，ssh，这种类型的协议在大多数情况下只是做小流量的数据交换，比如说按一下键盘，回显一些文字等等。
@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/tcp%E7%AA%97%E5%8F%A31.png">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/tcp%E7%AA%97%E5%8F%A32.png">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/weixindy.jpg">
-<meta property="og:updated_time" content="2018-11-21T10:04:17.245Z">
+<meta property="og:updated_time" content="2018-11-25T13:46:15.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tcp交互数据和块数据处理">
 <meta name="twitter:description" content="前言目前建立在TCP协议上的网络协议特别多，有telnet，ssh，有ftp，有http等等。这些协议又可以根据数据吞吐量来大致分成两大类：
@@ -108,7 +108,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '/public/',
     scheme: 'Gemini',
     version: '5.1.3',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -137,7 +137,7 @@
 
 
 
-  <title>tcp交互数据和块数据处理 | xianyuLuo Blog</title>
+  <title>tcp交互数据和块数据处理 | IT运维那点儿事</title>
   
 
 
@@ -175,9 +175,9 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/public/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">xianyuLuo Blog</span>
+        <span class="site-title">IT运维那点儿事</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -203,7 +203,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/public/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -213,7 +213,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/public/about" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -223,7 +223,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/public/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -233,7 +233,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/public/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -243,7 +243,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/public/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -253,7 +253,7 @@
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
+          <a href="/public/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -328,16 +328,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/archives/d8cfbc13.html">
+    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/d8cfbc13.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xianyuLuo">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/public/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xianyuLuo Blog">
+      <meta itemprop="name" content="IT运维那点儿事">
     </span>
 
     
@@ -380,7 +380,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络/" itemprop="url" rel="index">
+                  <a href="/public/categories/网络/" itemprop="url" rel="index">
                     <span itemprop="name">网络</span>
                   </a>
                 </span>
@@ -397,7 +397,7 @@
 
           
           
-             <span id="/archives/d8cfbc13.html" class="leancloud_visitors" data-flag-title="tcp交互数据和块数据处理">
+             <span id="/public/archives/d8cfbc13.html" class="leancloud_visitors" data-flag-title="tcp交互数据和块数据处理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -502,7 +502,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/TCP-IP/" rel="tag"># TCP/IP</a>
+            <a href="/public/tags/TCP-IP/" rel="tag"># TCP/IP</a>
           
         </div>
       
@@ -515,7 +515,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/684012cf.html" rel="next" title="tcp连接的建立与终止">
+              <a href="/public/archives/684012cf.html" rel="next" title="tcp连接的建立与终止">
                 <i class="fa fa-chevron-left"></i> tcp连接的建立与终止
               </a>
             
@@ -525,7 +525,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/208297ce.html" rel="prev" title="traefik在kubernetes中的应用">
+              <a href="/public/archives/208297ce.html" rel="prev" title="traefik在kubernetes中的应用">
                 traefik在kubernetes中的应用 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -607,7 +607,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/public/archives/">
               
                   <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
@@ -619,7 +619,7 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                <a href="/public/categories/index.html">
                   <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -630,7 +630,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                <a href="/public/tags/index.html">
                   <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -790,64 +790,64 @@
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/public/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/public/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/public/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/public/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/public/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/public/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/public/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/public/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/public/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/public/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/public/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/public/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/public/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
@@ -912,7 +912,7 @@
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/" + search_path;
+    var path = "/public/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {

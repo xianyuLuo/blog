@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/public/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -48,21 +48,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/public/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+<link href="/public/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon-next.png?v=5.1.3">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32-next.png?v=5.1.3">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/public/images/logo.svg?v=5.1.3" color="#222">
 
 
 
@@ -85,12 +85,12 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
 <meta property="og:type" content="article">
 <meta property="og:title" content="TTL">
 <meta property="og:url" content="http://laoxianyu.cn/archives/3549ca95.html">
-<meta property="og:site_name" content="xianyuLuo Blog">
+<meta property="og:site_name" content="IT运维那点儿事">
 <meta property="og:description" content="什么是TTL？就是用来记录IP数据包从发出经过了多少路由！
 TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由器时，TTL的值就会减1，当为0时，就把这个数据包给丢弃。较老的系统的TTL初始化值为15或32，现在一般的为255。
 为什么需要TTL？为了防止IP数据包在选路时无休止的在网络中流动。">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/weixindy.jpg">
-<meta property="og:updated_time" content="2018-11-21T10:04:48.581Z">
+<meta property="og:updated_time" content="2018-11-25T13:46:15.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TTL">
 <meta name="twitter:description" content="什么是TTL？就是用来记录IP数据包从发出经过了多少路由！
@@ -103,7 +103,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '/public/',
     scheme: 'Gemini',
     version: '5.1.3',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -132,7 +132,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
 
 
 
-  <title>TTL | xianyuLuo Blog</title>
+  <title>TTL | IT运维那点儿事</title>
   
 
 
@@ -170,9 +170,9 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/public/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">xianyuLuo Blog</span>
+        <span class="site-title">IT运维那点儿事</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -198,7 +198,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/public/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -208,7 +208,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/public/about" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -218,7 +218,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/public/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -228,7 +228,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/public/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -238,7 +238,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/public/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -248,7 +248,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
+          <a href="/public/404.html" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -323,16 +323,16 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/archives/3549ca95.html">
+    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/3549ca95.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xianyuLuo">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/public/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xianyuLuo Blog">
+      <meta itemprop="name" content="IT运维那点儿事">
     </span>
 
     
@@ -375,7 +375,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络/" itemprop="url" rel="index">
+                  <a href="/public/categories/网络/" itemprop="url" rel="index">
                     <span itemprop="name">网络</span>
                   </a>
                 </span>
@@ -392,7 +392,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
 
           
           
-             <span id="/archives/3549ca95.html" class="leancloud_visitors" data-flag-title="TTL">
+             <span id="/public/archives/3549ca95.html" class="leancloud_visitors" data-flag-title="TTL">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -484,7 +484,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
       
         <div class="post-tags">
           
-            <a href="/tags/TCP-IP/" rel="tag"># TCP/IP</a>
+            <a href="/public/tags/TCP-IP/" rel="tag"># TCP/IP</a>
           
         </div>
       
@@ -497,7 +497,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/b3d20160.html" rel="next" title="arp协议">
+              <a href="/public/archives/b3d20160.html" rel="next" title="arp协议">
                 <i class="fa fa-chevron-left"></i> arp协议
               </a>
             
@@ -507,7 +507,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/9b389b8e.html" rel="prev" title="ICMP">
+              <a href="/public/archives/9b389b8e.html" rel="prev" title="ICMP">
                 ICMP <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -589,7 +589,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/public/archives/">
               
                   <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
@@ -601,7 +601,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                <a href="/public/categories/index.html">
                   <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -612,7 +612,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                <a href="/public/tags/index.html">
                   <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -772,64 +772,64 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/public/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/public/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/public/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/public/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/public/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/public/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/public/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/public/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/public/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/public/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/public/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/public/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/public/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
@@ -894,7 +894,7 @@ TTL占8bit，所以它的最大值就是255；每当数据包经过一个路由�
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/" + search_path;
+    var path = "/public/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
