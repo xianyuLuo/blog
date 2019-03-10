@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="TCP/IP," />
+  <meta name="keywords" content="sre," />
 
 
 
@@ -79,22 +79,52 @@
 
 
 
-<meta name="description" content="什么是DNS解析？就是把域名转换为IP地址的一个过程
-为什么需要DNS解析？以前都是靠 /etc/hosts 文件来解析域名的，每解析一个域名就需要在文件里面添加一条对应记录。后来由于互联网的迅速发展，域名已经数不胜数了。如果这个时候还是一条一条记录的写在/etc/hosts 文件里面的话，那这个文件估计就超级大了。于是就有了DNS解析，由DNS服务器来解析域名。">
+<meta name="description" content="日期2015-10-23
+参与者agoogler、clarac、docbrown、jennifer和martym
+公告
+大型事故（#465），造成错误预算耗尽
+
+之前的待办事项评审
+确保山羊传送器可以用于传送牛奶
+——质子加速中的非线性特质可以预知了，应该可以在几天内解决准确性问题
+
+
+事故回顾
+新韵文的发现（事故465）
+—— 12.1亿个请求在连锁故障与潜伏先bug的共同作用下丢失，索引中不存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DNS解析">
-<meta property="og:url" content="http://laoxianyu.cn/archives/9e319110.html">
+<meta property="og:title" content="SRE附录F~生产环境会议记录示范">
+<meta property="og:url" content="http://laoxianyu.cn/archives/1566daae.html">
 <meta property="og:site_name" content="xianyuLuo Blog">
-<meta property="og:description" content="什么是DNS解析？就是把域名转换为IP地址的一个过程
-为什么需要DNS解析？以前都是靠 /etc/hosts 文件来解析域名的，每解析一个域名就需要在文件里面添加一条对应记录。后来由于互联网的迅速发展，域名已经数不胜数了。如果这个时候还是一条一条记录的写在/etc/hosts 文件里面的话，那这个文件估计就超级大了。于是就有了DNS解析，由DNS服务器来解析域名。">
-<meta property="og:image" content="http://dl-blog.laoxianyu.cn/dns%E8%A7%A3%E6%9E%90.png">
-<meta property="og:image" content="http://dl-blog.laoxianyu.cn/weixindy.jpg">
-<meta property="og:updated_time" content="2019-03-09T15:46:09.098Z">
+<meta property="og:description" content="日期2015-10-23
+参与者agoogler、clarac、docbrown、jennifer和martym
+公告
+大型事故（#465），造成错误预算耗尽
+
+之前的待办事项评审
+确保山羊传送器可以用于传送牛奶
+——质子加速中的非线性特质可以预知了，应该可以在几天内解决准确性问题
+
+
+事故回顾
+新韵文的发现（事故465）
+—— 12.1亿个请求在连锁故障与潜伏先bug的共同作用下丢失，索引中不存">
+<meta property="og:updated_time" content="2019-03-10T04:11:32.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DNS解析">
-<meta name="twitter:description" content="什么是DNS解析？就是把域名转换为IP地址的一个过程
-为什么需要DNS解析？以前都是靠 /etc/hosts 文件来解析域名的，每解析一个域名就需要在文件里面添加一条对应记录。后来由于互联网的迅速发展，域名已经数不胜数了。如果这个时候还是一条一条记录的写在/etc/hosts 文件里面的话，那这个文件估计就超级大了。于是就有了DNS解析，由DNS服务器来解析域名。">
-<meta name="twitter:image" content="http://dl-blog.laoxianyu.cn/dns%E8%A7%A3%E6%9E%90.png">
+<meta name="twitter:title" content="SRE附录F~生产环境会议记录示范">
+<meta name="twitter:description" content="日期2015-10-23
+参与者agoogler、clarac、docbrown、jennifer和martym
+公告
+大型事故（#465），造成错误预算耗尽
+
+之前的待办事项评审
+确保山羊传送器可以用于传送牛奶
+——质子加速中的非线性特质可以预知了，应该可以在几天内解决准确性问题
+
+
+事故回顾
+新韵文的发现（事故465）
+—— 12.1亿个请求在连锁故障与潜伏先bug的共同作用下丢失，索引中不存">
 
 
 
@@ -124,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://laoxianyu.cn/archives/9e319110.html"/>
+  <link rel="canonical" href="http://laoxianyu.cn/archives/1566daae.html"/>
 
 
 
 
 
-  <title>DNS解析 | xianyuLuo Blog</title>
+  <title>SRE附录F~生产环境会议记录示范 | xianyuLuo Blog</title>
   
 
 
@@ -321,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/9e319110.html">
+    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/1566daae.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xianyuLuo">
@@ -338,7 +368,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">DNS解析</h2>
+          <h2 class="post-title" itemprop="name headline">SRE附录F~生产环境会议记录示范</h2>
         
 
         <div class="post-meta">
@@ -350,8 +380,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-20T23:16:07+08:00">
-                2016-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T12:09:02+08:00">
+                2019-03-10
               </time>
             
 
@@ -361,28 +391,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/public/categories/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -390,7 +398,7 @@
 
           
           
-             <span id="/public/archives/9e319110.html" class="leancloud_visitors" data-flag-title="DNS解析">
+             <span id="/public/archives/1566daae.html" class="leancloud_visitors" data-flag-title="SRE附录F~生产环境会议记录示范">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -421,23 +429,49 @@
       
 
       
-        <h4 id="什么是DNS解析？"><a href="#什么是DNS解析？" class="headerlink" title="什么是DNS解析？"></a>什么是DNS解析？</h4><pre><code>就是把域名转换为IP地址的一个过程
-</code></pre><h4 id="为什么需要DNS解析？"><a href="#为什么需要DNS解析？" class="headerlink" title="为什么需要DNS解析？"></a>为什么需要DNS解析？</h4><pre><code>以前都是靠 /etc/hosts 文件来解析域名的，每解析一个域名就需要在文件里面添加一条对应记录。后来由于互联网的迅速发展，域名已经数不胜数了。如果这个时候还是一条一条记录的写在/etc/hosts 文件里面的话，那这个文件估计就超级大了。于是就有了DNS解析，由DNS服务器来解析域名。
-</code></pre><a id="more"></a>
-<p><img src="http://dl-blog.laoxianyu.cn/dns%E8%A7%A3%E6%9E%90.png" alt="dns解析"></p>
-<p><strong>DNS域名解析过程有两种方法：递归解析、迭代解析</strong></p>
-<h4 id="递归解析："><a href="#递归解析：" class="headerlink" title="递归解析："></a>递归解析：</h4><pre><code>递归解析就相当于你把这件事情交给第三个人去做，不管他怎么做，反正最后把域名对应的IP地址交给你就是了。而这第三个人就是DNS服务器，这也是我们生活中用的比较多的一种方法。一般用的就是电信的 114.114.114.114
-</code></pre><h4 id="迭代解析："><a href="#迭代解析：" class="headerlink" title="迭代解析："></a>迭代解析：</h4><pre><code>迭代解析就是你自己去找。
-全球的根域名服务器一共有13台，你自己去一级一级的找下去，最终找到自己想解析的域名。
-</code></pre><hr>
-<h4 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h4><p>解析 www.google.com.（正规来说这后面是还有一个点的，只是一般都省略了）这个域名；我的DNS服务器是电信的114.114.114.114<br>解析步骤：<br>    1、我自己的电脑去访问www.google.com的时候，就问114 “你帮我找找www.google.com服务器的IP地址”<br>    2、然后114就去找到13台根服务器中的一台根服务器，问“你知道www.google.com的IP地址嘛?”，然后根服务器就说：“不知道，但是我知道.com的服务器IP，要不你去问问它？”<br>    3、接着114就找到.com的服务器问：“你知道www.google.com的IP嘛？”，然后.com服务器就说：“我不知道，但是我知道google.com的服务器IP，要不你去问问它？”<br>    4、再接着114就找到google.com的服务器问：“你知道www.google.com的IP嘛？”，然后google.com服务器就回答道“知道呀”，然后把IP地址告诉114<br>    5、历经千辛万苦终于找到了，114就会暂时把这个地址缓存一段时间，当有人再来问它的时候，它就不用那么辛苦去找了，直接从缓存里面调出来就是了<br>    6、最后114就把www.google.com的IP地址告诉我了，然后我就去向那个IP地址请求资源去了</p>
-<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><pre><code>我去问114，让它给我www.google.com的服务器地址，这样的方法就叫做递归，或者也可以叫做转发吧！
-114去找根服务器，一台台挨着问的这个过程就叫做迭代！
-</code></pre><font color="#ff1201">技术交流可加QQ群：<strong>774332965</strong><br></font>
-
-<font color="#ff1201">微信订阅号同步：<strong>IT运维那点儿事</strong></font>
-
-<p><img src="http://dl-blog.laoxianyu.cn/weixindy.jpg" alt="weixin"></p>
+        <h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><p>2015-10-23</p>
+<h3 id="参与者"><a href="#参与者" class="headerlink" title="参与者"></a>参与者</h3><p>agoogler、clarac、docbrown、jennifer和martym</p>
+<h3 id="公告"><a href="#公告" class="headerlink" title="公告"></a>公告</h3><ul>
+<li>大型事故（#465），造成错误预算耗尽</li>
+</ul>
+<h3 id="之前的待办事项评审"><a href="#之前的待办事项评审" class="headerlink" title="之前的待办事项评审"></a>之前的待办事项评审</h3><ul>
+<li><p>确保山羊传送器可以用于传送牛奶</p>
+<p>——质子加速中的非线性特质可以预知了，应该可以在几天内解决准确性问题</p>
+</li>
+</ul>
+<h3 id="事故回顾"><a href="#事故回顾" class="headerlink" title="事故回顾"></a>事故回顾</h3><ul>
+<li><p>新韵文的发现（事故465）</p>
+<p>—— 12.1亿个请求在连锁故障与潜伏先bug的共同作用下丢失，索引中不存在新的韵文和未预料的流量</p>
+<p>—— 文件描述符的bug以修复，已经部署到生产环境</p>
+<p>—— 调研使用flux<br>capacitor进行负载均衡，利用负责抛弃来预防再发生</p>
+<p>—— 错误预算已经耗尽，生产环境的更新将会停止一个月。除非docbrown能够以该极为罕见、不可预知为理由获得管理层批准</p>
+</li>
+<li><p>AnnotataionConsistencyTooEventual：本周告警5次，可能是由于bigtabale跨区域的复制延迟导致</p>
+<p>—— 调查仍在进行，见bug 4898200</p>
+<p>—— 最近不会有修复，会提高阈值以减少无效告警的次数</p>
+</li>
+</ul>
+<h3 id="非紧急告警回顾"><a href="#非紧急告警回顾" class="headerlink" title="非紧急告警回顾"></a>非紧急告警回顾</h3><ul>
+<li>没有</li>
+</ul>
+<h3 id="监控系统修改-静音"><a href="#监控系统修改-静音" class="headerlink" title="监控系统修改/静音"></a>监控系统修改/静音</h3><ul>
+<li>AnnotataionConsistencyTooEventual，可以接受的延迟阈值从60s提高到180s</li>
+</ul>
+<h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><ul>
+<li>处于新韵文事故时借用了一些资源，会在下周下线多余的容量以退还容量</li>
+<li>目前的利用率是 CPU 60%、RAM 75%、DISK 44%</li>
+</ul>
+<h3 id="关键服务指标"><a href="#关键服务指标" class="headerlink" title="关键服务指标"></a>关键服务指标</h3><ul>
+<li>OK 99 百分比延迟：88ms &lt; 100ms SLO目标（过去30天）</li>
+<li>BAD 可用性：86.95% &lt; 99.99 SLO目标 （过去30天）</li>
+</ul>
+<h3 id="讨论-项目更新"><a href="#讨论-项目更新" class="headerlink" title="讨论/项目更新"></a>讨论/项目更新</h3><ul>
+<li>项目Molere下两周发布</li>
+</ul>
+<h3 id="新的代办事项"><a href="#新的代办事项" class="headerlink" title="新的代办事项"></a>新的代办事项</h3><ul>
+<li>TODO （martym）：提高AnnotataionConsistencyTooEventual的阈值</li>
+<li>TODO（docbrown）：将实例数量复原，退还资源</li>
+</ul>
 
       
     </div>
@@ -484,7 +518,7 @@
       
         <div class="post-tags">
           
-            <a href="/public/tags/TCP-IP/" rel="tag"># TCP/IP</a>
+            <a href="/public/tags/sre/" rel="tag"># sre</a>
           
         </div>
       
@@ -497,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/public/archives/7942b68e.html" rel="next" title="cache和buffer的区别">
-                <i class="fa fa-chevron-left"></i> cache和buffer的区别
+              <a href="/public/archives/7ef83387.html" rel="next" title="Ingress介绍">
+                <i class="fa fa-chevron-left"></i> Ingress介绍
               </a>
             
           </div>
@@ -507,8 +541,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/public/archives/b3d20160.html" rel="prev" title="arp协议">
-                arp协议 <i class="fa fa-chevron-right"></i>
+              <a href="/public/archives/7d117065.html" rel="prev" title="SRE附录D~事后总结示范">
+                SRE附录D~事后总结示范 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -674,7 +708,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是DNS解析？"><span class="nav-number">1.</span> <span class="nav-text">什么是DNS解析？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么需要DNS解析？"><span class="nav-number">2.</span> <span class="nav-text">为什么需要DNS解析？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#递归解析："><span class="nav-number">3.</span> <span class="nav-text">递归解析：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#迭代解析："><span class="nav-number">4.</span> <span class="nav-text">迭代解析：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例子："><span class="nav-number">5.</span> <span class="nav-text">例子：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">6.</span> <span class="nav-text">总结：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#日期"><span class="nav-number">1.</span> <span class="nav-text">日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参与者"><span class="nav-number">2.</span> <span class="nav-text">参与者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公告"><span class="nav-number">3.</span> <span class="nav-text">公告</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#之前的待办事项评审"><span class="nav-number">4.</span> <span class="nav-text">之前的待办事项评审</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事故回顾"><span class="nav-number">5.</span> <span class="nav-text">事故回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非紧急告警回顾"><span class="nav-number">6.</span> <span class="nav-text">非紧急告警回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监控系统修改-静音"><span class="nav-number">7.</span> <span class="nav-text">监控系统修改/静音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源"><span class="nav-number">8.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键服务指标"><span class="nav-number">9.</span> <span class="nav-text">关键服务指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讨论-项目更新"><span class="nav-number">10.</span> <span class="nav-text">讨论/项目更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的代办事项"><span class="nav-number">11.</span> <span class="nav-text">新的代办事项</span></a></li></ol></div>
             
 
           </div>

@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SRE附录C~事故状态文档示范]]></title>
+    <url>%2Fpublic%2Farchives%2F708220af.html</url>
+    <content type="text"><![CDATA[莎士比亚搜索服务 新韵文+过载事故：2015-10-21（沟通负责人会随时更新事故概要） 摘要莎士比亚搜索服务由于新发现的韵文不在索引中而处于连锁故障状态 状态活跃，事故编号 ##45 事故处理中心IRC #shakespeare 频道 事故处理组织架构：（参与人） 目前事故负责人：xxx 运维负责人： 计划负责人： 沟通负责人： 下一个事故总负责人：待定（沟通负责人在交接班时或者每4小时更新一次） 细节状态最终更新时间 2015-10-21 15:28 UTC，Jennifer 退出条件 向莎士比亚搜索服务的Search Corpus中添加新的韵文（TODO） 在30分钟内维持SLO，可用性为99.99%，延迟为99%&lt;100ms（TODO） 代办列表以及提交的工单 执行MapReduce任务，重新索引Shakespeare corpus（DONE） 借用一些紧急资源来提高容量（DONE） 启用 flux capacitor，在集群之间负载均衡（TODO） 事故时间线（倒叙排列，时区为UTC） 2015-10-21 15:28 UTC jennifer ——全球服务容量提升为2倍 2015-10-21 15:21 UTC jennifer ——将所有流量导向USA-2泄洪集群，同事将其他集群下线，以便让这些集群从连锁故障中恢复，同时启动更多任务 ——MapReduce索引任务完成，等待Bigdata复制到所有集群 2015-10-21 15:10 UTC martym ——向Shakespeare corpus中增加新的韵文，同时启动MapReduce任务 2015-10-21 15:04 UTC martym ——从Shakespeare-discuss@ 邮件列表中获得了新发现的韵文全文 2015-10-21 15:01 UTC docbrown ——由于出现连锁故障，声明目前进入紧急状态 2015-10-21 14:55 UTC docbrown ——出现大量紧急报警，全部集群出现 ManyHttp500s]]></content>
+      <tags>
+        <tag>sre</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SRE附录D~事后总结示范]]></title>
+    <url>%2Fpublic%2Farchives%2F7d117065.html</url>
+    <content type="text"><![CDATA[莎士比亚新询文事故总结（事故编号 #465）日期2015-10-21 作者Jennifer、martym、agoogler 目前状态已经终稿，待办事项正在进行中 摘要莎士比亚搜索服务出现66分钟的故障，由于新发现了一篇韵文，导致用户流量暴涨。 事故影响预计12.1亿个请求丢失，没有损失任何收入。 根源问题由于异常的高负债情况以及搜索词语在 Shakespeare Corpus 中不存在时的一项资源泄露导致的连锁故障的发生，新发现的韵文使用了一个之前从未在莎士比亚文献中出现的词语。这恰恰是用户大量搜索的关键词！在日常情况下。这种资源泄露导致的任务崩溃现象，由于出现非常不频繁，而没有被注意到。 触发条件潜伏性的Bug被大量上涨流量所触发 解决方案将流量导向泄洪集群，同时增加了10倍容量，以应对连锁故障。部署了更新过的索引，绕过了潜在的Bug，在公共对新韵文的兴趣消退之前，保持额外的容量。资源泄露的问题已经被找到，并且修复已经上线 检测我检测到大量的 HTTP 500的情况，向on-call发送了紧急报警 代办事项 待办事项 类型 负责人 经验教训做的好的地方 监控系统在大量错误的情况下快速发出了告警 在所有集群中快速更新的 Shakespeare Corpus 做的不好的地方 对连锁故障的处理不够熟练 由于这次大幅度的流量增长，几乎全部请求都失败了，导致我们超过了可用性与错误预算数个数量级。 幸运的因素 莎士比亚迷的邮件列表里刚好有一份新的韵文文本 服务日志中包括了指出文件描述符耗尽问题导致崩溃的栈跟踪 致死请求通过推送新的索引关键词就解决了 时间线2015-10-21（所有时区都是UTC） 14:51 新闻报道新的莎士比亚韵文在一辆Delorean车的杂物箱中发现 14:54 事故开始，搜索后端在高负载的情况下崩溃 …… 15:01 应急故障管理开始 …… 15:36 故障缓解 …… 16:00 故障结束 其他支持信息监控信息： http://monitor.xxx.com]]></content>
+      <tags>
+        <tag>sre</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SRE附录F~生产环境会议记录示范]]></title>
+    <url>%2Fpublic%2Farchives%2F1566daae.html</url>
+    <content type="text"><![CDATA[日期2015-10-23 参与者agoogler、clarac、docbrown、jennifer和martym 公告 大型事故（#465），造成错误预算耗尽 之前的待办事项评审 确保山羊传送器可以用于传送牛奶 ——质子加速中的非线性特质可以预知了，应该可以在几天内解决准确性问题 事故回顾 新韵文的发现（事故465） —— 12.1亿个请求在连锁故障与潜伏先bug的共同作用下丢失，索引中不存在新的韵文和未预料的流量 —— 文件描述符的bug以修复，已经部署到生产环境 —— 调研使用fluxcapacitor进行负载均衡，利用负责抛弃来预防再发生 —— 错误预算已经耗尽，生产环境的更新将会停止一个月。除非docbrown能够以该极为罕见、不可预知为理由获得管理层批准 AnnotataionConsistencyTooEventual：本周告警5次，可能是由于bigtabale跨区域的复制延迟导致 —— 调查仍在进行，见bug 4898200 —— 最近不会有修复，会提高阈值以减少无效告警的次数 非紧急告警回顾 没有 监控系统修改/静音 AnnotataionConsistencyTooEventual，可以接受的延迟阈值从60s提高到180s 资源 处于新韵文事故时借用了一些资源，会在下周下线多余的容量以退还容量 目前的利用率是 CPU 60%、RAM 75%、DISK 44% 关键服务指标 OK 99 百分比延迟：88ms &lt; 100ms SLO目标（过去30天） BAD 可用性：86.95% &lt; 99.99 SLO目标 （过去30天） 讨论/项目更新 项目Molere下两周发布 新的代办事项 TODO （martym）：提高AnnotataionConsistencyTooEventual的阈值 TODO（docbrown）：将实例数量复原，退还资源]]></content>
+      <tags>
+        <tag>sre</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ingress介绍]]></title>
     <url>%2Fpublic%2Farchives%2F7ef83387.html</url>
     <content type="text"><![CDATA[概念Ingress是kubernetes1.1之后官方提出的一个标准，按照这套标准它有多种实现，比如 nginx-ingress-controller、traefik-ingress-controller、kong-ingress-controller，这3中都是官方推荐的。Ingress的出现解决了Service的短板：只能在tcp层面做负载均衡。而ingress可以方便的做http/https层面的负载均衡。一个是在4层，一个在7层。ingress就是控制客户端从入口连接到k8s集群服务的规则的集合！ ingress出现之前，服务暴露是这样的： ingress出现之后，服务暴露是这样的： 可以给Ingress配置提供外部可访问的URL、负载均衡、SSL、基于名称的虚拟主机等。ingress-controller负责实现了ingress这套标准，一般使用的是负载均衡。 使用ingress之前，必须要先部署ingress-controller，不然把ingress部署起来也没用，它不会产生实际作用。 Ingress格式123456789101112apiVersion: extensions/v1beta1kind: Ingressmetadata: name: test-ingressspec: rules: - http: paths: - path: /testpath backend: serviceName: test servicePort: 80 每个Ingress都需要配置rules。 根据Ingress Spec配置的不同，Ingress可以分为以下几种类型： 单服务Ingress单服务Ingress即该Ingress仅指定一个没有任何规则的后端服务。12345678apiVersion: extensions/v1beta1kind: Ingressmetadata: name: test-ingressspec: backend: serviceName: testsvc servicePort: 80 路由到多服务的Ingress路由到多服务的Ingress即根据请求路径的不同转发到不同的后端服务上，比如12345678910111213141516171819apiVersion: extensions/v1beta1kind: Ingressmetadata: name: test annotations: nginx.ingress.kubernetes.io/rewrite-target: /spec: rules: - host: foo.bar.com http: paths: - path: /foo backend: serviceName: s1 servicePort: 80 - path: /bar backend: serviceName: s2 servicePort: 80 虚拟主机Ingress虚拟主机Ingress即根据Host header的不同转发到不同的后端服务上，如下所示123456789101112131415161718apiVersion: extensions/v1beta1kind: Ingressmetadata: name: testspec: rules: - host: foo.bar.com http: paths: - backend: serviceName: s1 servicePort: 80 - host: bar.foo.com http: paths: - backend: serviceName: s2 servicePort: 80 注：没有定义规则的后端服务称为默认后端服务，可以用来方便的处理404页面。 k8s官方ingress文档：https://kubernetes.io/docs/concepts/services-networking/ingress/ traefik-ingress-controller使用：https://laoxianyu.cn/archives/208297ce.html 技术交流可加QQ群：774332965 微信订阅号同步：IT运维那点儿事]]></content>

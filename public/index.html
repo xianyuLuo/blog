@@ -315,6 +315,544 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/708220af.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xianyuLuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/public/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xianyuLuo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/public/archives/708220af.html" itemprop="url">SRE附录C~事故状态文档示范</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T12:11:03+08:00">
+                2019-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/public/archives/708220af.html" class="leancloud_visitors" data-flag-title="SRE附录C~事故状态文档示范">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="莎士比亚搜索服务-新韵文-过载事故：2015-10-21"><a href="#莎士比亚搜索服务-新韵文-过载事故：2015-10-21" class="headerlink" title="莎士比亚搜索服务 新韵文+过载事故：2015-10-21"></a>莎士比亚搜索服务 新韵文+过载事故：2015-10-21</h1><p>（沟通负责人会随时更新事故概要）</p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>莎士比亚搜索服务由于新发现的韵文不在索引中而处于连锁故障状态</p>
+<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p>活跃，事故编号 ##45</p>
+<h3 id="事故处理中心"><a href="#事故处理中心" class="headerlink" title="事故处理中心"></a>事故处理中心</h3><p>IRC #shakespeare 频道</p>
+<h3 id="事故处理组织架构：（参与人）"><a href="#事故处理组织架构：（参与人）" class="headerlink" title="事故处理组织架构：（参与人）"></a>事故处理组织架构：（参与人）</h3><ul>
+<li>目前事故负责人：xxx</li>
+<li>运维负责人：</li>
+<li>计划负责人：</li>
+<li><p>沟通负责人：</p>
+</li>
+<li><p>下一个事故总负责人：待定<br>（沟通负责人在交接班时或者每4小时更新一次）</p>
+</li>
+</ul>
+<h3 id="细节状态"><a href="#细节状态" class="headerlink" title="细节状态"></a>细节状态</h3><p>最终更新时间 2015-10-21 15:28 UTC，Jennifer</p>
+<h3 id="退出条件"><a href="#退出条件" class="headerlink" title="退出条件"></a>退出条件</h3><ul>
+<li>向莎士比亚搜索服务的Search </li>
+<li>Corpus中添加新的韵文（TODO）</li>
+<li>在30分钟内维持SLO，可用性为99.99%，延迟为99%&lt;100ms（TODO）</li>
+</ul>
+<h3 id="代办列表以及提交的工单"><a href="#代办列表以及提交的工单" class="headerlink" title="代办列表以及提交的工单"></a>代办列表以及提交的工单</h3><ul>
+<li>执行MapReduce任务，重新索引Shakespeare corpus（DONE）</li>
+<li>借用一些紧急资源来提高容量（DONE）</li>
+<li>启用 flux capacitor，在集群之间负载均衡（TODO）</li>
+</ul>
+<h3 id="事故时间线（倒叙排列，时区为UTC）"><a href="#事故时间线（倒叙排列，时区为UTC）" class="headerlink" title="事故时间线（倒叙排列，时区为UTC）"></a>事故时间线（倒叙排列，时区为UTC）</h3><ul>
+<li><p>2015-10-21 15:28 UTC jennifer</p>
+<p>——全球服务容量提升为2倍</p>
+</li>
+<li><p>2015-10-21 15:21 UTC jennifer</p>
+<p>——将所有流量导向USA-2泄洪集群，同事将其他集群下线，以便让这些集群从连锁故障中恢复，同时启动更多任务</p>
+<p>——MapReduce索引任务完成，等待Bigdata复制到所有集群</p>
+</li>
+<li><p>2015-10-21 15:10 UTC martym</p>
+<p>——向Shakespeare corpus中增加新的韵文，同时启动MapReduce任务</p>
+</li>
+<li><p>2015-10-21 15:04 UTC martym</p>
+<p>——从Shakespeare-discuss@ 邮件列表中获得了新发现的韵文全文</p>
+</li>
+<li><p>2015-10-21 15:01 UTC docbrown</p>
+<p>——由于出现连锁故障，声明目前进入紧急状态</p>
+</li>
+<li><p>2015-10-21 14:55 UTC docbrown</p>
+<p>——出现大量紧急报警，全部集群出现 ManyHttp500s</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/7d117065.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xianyuLuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/public/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xianyuLuo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/public/archives/7d117065.html" itemprop="url">SRE附录D~事后总结示范</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T12:10:18+08:00">
+                2019-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/public/archives/7d117065.html" class="leancloud_visitors" data-flag-title="SRE附录D~事后总结示范">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="莎士比亚新询文事故总结（事故编号-465）"><a href="#莎士比亚新询文事故总结（事故编号-465）" class="headerlink" title="莎士比亚新询文事故总结（事故编号 #465）"></a>莎士比亚新询文事故总结（事故编号 #465）</h1><h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><p>2015-10-21</p>
+<h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>Jennifer、martym、agoogler</p>
+<h3 id="目前状态"><a href="#目前状态" class="headerlink" title="目前状态"></a>目前状态</h3><p>已经终稿，待办事项正在进行中</p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>莎士比亚搜索服务出现66分钟的故障，由于新发现了一篇韵文，导致用户流量暴涨。</p>
+<h3 id="事故影响"><a href="#事故影响" class="headerlink" title="事故影响"></a>事故影响</h3><p>预计12.1亿个请求丢失，没有损失任何收入。</p>
+<h3 id="根源问题"><a href="#根源问题" class="headerlink" title="根源问题"></a>根源问题</h3><p>由于异常的高负债情况以及搜索词语在 Shakespeare Corpus 中不存在时的一项资源泄露导致的连锁故障的发生，新发现的韵文使用了一个之前从未在莎士比亚文献中出现的词语。这恰恰是用户大量搜索的关键词！在日常情况下。这种资源泄露导致的任务崩溃现象，由于出现非常不频繁，而没有被注意到。</p>
+<h3 id="触发条件"><a href="#触发条件" class="headerlink" title="触发条件"></a>触发条件</h3><p>潜伏性的Bug被大量上涨流量所触发</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>将流量导向泄洪集群，同时增加了10倍容量，以应对连锁故障。部署了更新过的索引，绕过了潜在的Bug，在公共对新韵文的兴趣消退之前，保持额外的容量。资源泄露的问题已经被找到，并且修复已经上线</p>
+<h3 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h3><p>我检测到大量的 HTTP 500的情况，向on-call发送了紧急报警</p>
+<h3 id="代办事项"><a href="#代办事项" class="headerlink" title="代办事项"></a>代办事项</h3><table>
+<thead>
+<tr>
+<th>待办事项</th>
+<th>类型</th>
+<th>负责人</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="经验教训"><a href="#经验教训" class="headerlink" title="经验教训"></a>经验教训</h1><h3 id="做的好的地方"><a href="#做的好的地方" class="headerlink" title="做的好的地方"></a>做的好的地方</h3><ul>
+<li>监控系统在大量错误的情况下快速发出了告警</li>
+<li>在所有集群中快速更新的 Shakespeare Corpus</li>
+</ul>
+<h3 id="做的不好的地方"><a href="#做的不好的地方" class="headerlink" title="做的不好的地方"></a>做的不好的地方</h3><ul>
+<li>对连锁故障的处理不够熟练</li>
+<li>由于这次大幅度的流量增长，几乎全部请求都失败了，导致我们超过了可用性与错误预算数个数量级。</li>
+</ul>
+<h3 id="幸运的因素"><a href="#幸运的因素" class="headerlink" title="幸运的因素"></a>幸运的因素</h3><ul>
+<li>莎士比亚迷的邮件列表里刚好有一份新的韵文文本</li>
+<li>服务日志中包括了指出文件描述符耗尽问题导致崩溃的栈跟踪</li>
+<li>致死请求通过推送新的索引关键词就解决了</li>
+</ul>
+<h3 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h3><p>2015-10-21（所有时区都是UTC）</p>
+<ul>
+<li>14:51 新闻报道新的莎士比亚韵文在一辆Delorean车的杂物箱中发现</li>
+<li>14:54 事故开始，搜索后端在高负载的情况下崩溃</li>
+<li>……</li>
+<li>15:01 应急故障管理开始</li>
+<li>……</li>
+<li>15:36 故障缓解</li>
+<li>……</li>
+<li>16:00 故障结束</li>
+</ul>
+<h1 id="其他支持信息"><a href="#其他支持信息" class="headerlink" title="其他支持信息"></a>其他支持信息</h1><p>监控信息： <a href="http://monitor.xxx.com" target="_blank" rel="external">http://monitor.xxx.com</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/1566daae.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xianyuLuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/public/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xianyuLuo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/public/archives/1566daae.html" itemprop="url">SRE附录F~生产环境会议记录示范</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T12:09:02+08:00">
+                2019-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/public/archives/1566daae.html" class="leancloud_visitors" data-flag-title="SRE附录F~生产环境会议记录示范">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><p>2015-10-23</p>
+<h3 id="参与者"><a href="#参与者" class="headerlink" title="参与者"></a>参与者</h3><p>agoogler、clarac、docbrown、jennifer和martym</p>
+<h3 id="公告"><a href="#公告" class="headerlink" title="公告"></a>公告</h3><ul>
+<li>大型事故（#465），造成错误预算耗尽</li>
+</ul>
+<h3 id="之前的待办事项评审"><a href="#之前的待办事项评审" class="headerlink" title="之前的待办事项评审"></a>之前的待办事项评审</h3><ul>
+<li><p>确保山羊传送器可以用于传送牛奶</p>
+<p>——质子加速中的非线性特质可以预知了，应该可以在几天内解决准确性问题</p>
+</li>
+</ul>
+<h3 id="事故回顾"><a href="#事故回顾" class="headerlink" title="事故回顾"></a>事故回顾</h3><ul>
+<li><p>新韵文的发现（事故465）</p>
+<p>—— 12.1亿个请求在连锁故障与潜伏先bug的共同作用下丢失，索引中不存在新的韵文和未预料的流量</p>
+<p>—— 文件描述符的bug以修复，已经部署到生产环境</p>
+<p>—— 调研使用flux<br>capacitor进行负载均衡，利用负责抛弃来预防再发生</p>
+<p>—— 错误预算已经耗尽，生产环境的更新将会停止一个月。除非docbrown能够以该极为罕见、不可预知为理由获得管理层批准</p>
+</li>
+<li><p>AnnotataionConsistencyTooEventual：本周告警5次，可能是由于bigtabale跨区域的复制延迟导致</p>
+<p>—— 调查仍在进行，见bug 4898200</p>
+<p>—— 最近不会有修复，会提高阈值以减少无效告警的次数</p>
+</li>
+</ul>
+<h3 id="非紧急告警回顾"><a href="#非紧急告警回顾" class="headerlink" title="非紧急告警回顾"></a>非紧急告警回顾</h3><ul>
+<li>没有</li>
+</ul>
+<h3 id="监控系统修改-静音"><a href="#监控系统修改-静音" class="headerlink" title="监控系统修改/静音"></a>监控系统修改/静音</h3><ul>
+<li>AnnotataionConsistencyTooEventual，可以接受的延迟阈值从60s提高到180s</li>
+</ul>
+<h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><ul>
+<li>处于新韵文事故时借用了一些资源，会在下周下线多余的容量以退还容量</li>
+<li>目前的利用率是 CPU 60%、RAM 75%、DISK 44%</li>
+</ul>
+<h3 id="关键服务指标"><a href="#关键服务指标" class="headerlink" title="关键服务指标"></a>关键服务指标</h3><ul>
+<li>OK 99 百分比延迟：88ms &lt; 100ms SLO目标（过去30天）</li>
+<li>BAD 可用性：86.95% &lt; 99.99 SLO目标 （过去30天）</li>
+</ul>
+<h3 id="讨论-项目更新"><a href="#讨论-项目更新" class="headerlink" title="讨论/项目更新"></a>讨论/项目更新</h3><ul>
+<li>项目Molere下两周发布</li>
+</ul>
+<h3 id="新的代办事项"><a href="#新的代办事项" class="headerlink" title="新的代办事项"></a>新的代办事项</h3><ul>
+<li>TODO （martym）：提高AnnotataionConsistencyTooEventual的阈值</li>
+<li>TODO（docbrown）：将实例数量复原，退还资源</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/7ef83387.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1414,481 +1952,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/7a3dfa9.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xianyuLuo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/public/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xianyuLuo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/public/archives/7a3dfa9.html" itemprop="url">OSI七层协议详细讲解</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-05T10:20:05+08:00">
-                2016-12-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/public/categories/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/public/archives/7a3dfa9.html" class="leancloud_visitors" data-flag-title="OSI七层协议详细讲解">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>今天我们从高到低依次来讲解。<br>可能有些人不是很详细的了解OSI各层所对应的协议，之前我也不是很了解，所以就把每层对应的协议也一起写在了每层的最后</p>
-<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/public/archives/7a3dfa9.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/2f104938.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xianyuLuo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/public/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xianyuLuo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/public/archives/2f104938.html" itemprop="url">OSI/ISO七层——TCP/IP四层</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-30T16:31:48+08:00">
-                2016-11-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/public/categories/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/public/archives/2f104938.html" class="leancloud_visitors" data-flag-title="OSI/ISO七层——TCP/IP四层">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>OSI：一个国际组织<br>ISO：OSI提出的网络的7层架构</p>
-<p>TCP：传输控制协议
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/public/archives/2f104938.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://laoxianyu.cn/public/archives/6cfb29f7.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xianyuLuo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/public/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xianyuLuo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/public/archives/6cfb29f7.html" itemprop="url">IP协议</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-24T23:20:16+08:00">
-                2016-11-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/public/categories/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/public/archives/6cfb29f7.html" class="leancloud_visitors" data-flag-title="IP协议">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>前言</strong><br>    TCP/IP协议是一个很大协议族，里面包含了IP协议、TCP协议、UDP协议、ICMP协议、IGMP……等等的协议；而IP、TCP就是其中很重要两个的协议。今天我们就来一起简单的分析一下IP协议。</p>
-<h4 id="IP协议简介"><a href="#IP协议简介" class="headerlink" title="IP协议简介"></a>IP协议简介</h4><pre><code>IP协议是TCP/IP协议的核心，所有的TCP，UDP，IMCP，IGCP的数据都以IP数据格式传输。要注意的是，IP不是可靠的协议，这是说，IP协议没有提供一种数据未传达以后的处理机制；而它的上层协议TCP就具有这个功能。
-</code></pre>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/public/archives/6cfb29f7.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1939,7 +2002,7 @@
               
                 <a href="/public/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1961,7 +2024,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/public/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
