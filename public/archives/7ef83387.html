@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/public/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/public/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/public/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/public/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/public/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="/public/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon-next.png?v=5.1.3">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="kubernetes,ingress," />
+  <meta name="keywords" content="kubernetes,ingress,">
 
 
 
@@ -80,11 +80,13 @@
 
 
 <meta name="description" content="概念Ingress是kubernetes1.1之后官方提出的一个标准，按照这套标准它有多种实现，比如 nginx-ingress-controller、traefik-ingress-controller、kong-ingress-controller，这3中都是官方推荐的。Ingress的出现解决了Service的短板：只能在tcp层面做负载均衡。而ingress可以方便的做http/https">
+<meta name="keywords" content="kubernetes,ingress">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ingress介绍">
 <meta property="og:url" content="http://laoxianyu.cn/archives/7ef83387.html">
 <meta property="og:site_name" content="xianyuLuo Blog">
 <meta property="og:description" content="概念Ingress是kubernetes1.1之后官方提出的一个标准，按照这套标准它有多种实现，比如 nginx-ingress-controller、traefik-ingress-controller、kong-ingress-controller，这3中都是官方推荐的。Ingress的出现解决了Service的短板：只能在tcp层面做负载均衡。而ingress可以方便的做http/https">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/image2018-8-10_14-6-49.png">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/image2018-8-10_14-7-29.png">
 <meta property="og:image" content="http://dl-blog.laoxianyu.cn/weixindy.jpg">
@@ -122,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://laoxianyu.cn/archives/7ef83387.html"/>
+  <link rel="canonical" href="http://laoxianyu.cn/archives/7ef83387.html">
 
 
 
@@ -166,7 +168,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/public/"  class="brand" rel="start">
+      <a href="/public/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">xianyuLuo Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -196,7 +198,7 @@
         <li class="menu-item menu-item-home">
           <a href="/public/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -206,7 +208,7 @@
         <li class="menu-item menu-item-about">
           <a href="/public/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -216,7 +218,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/public/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -226,7 +228,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/public/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -236,7 +238,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/public/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -246,7 +248,7 @@
         <li class="menu-item menu-item-commonweal">
           <a href="/public/404.html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
             
             公益404
           </a>
@@ -259,7 +261,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -280,9 +282,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -323,7 +323,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xianyuLuo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/public/images/avatar.gif">
     </span>
 
@@ -359,7 +359,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -461,14 +461,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="http://dl-blog.laoxianyu.cn/weixin.png" alt="xianyuLuo 微信支付"/>
+        <img id="wechat_qr" src="http://dl-blog.laoxianyu.cn/weixin.png" alt="xianyuLuo 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="http://dl-blog.laoxianyu.cn/alipay.jpg" alt="xianyuLuo 支付宝"/>
+        <img id="alipay_qr" src="http://dl-blog.laoxianyu.cn/alipay.jpg" alt="xianyuLuo 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -679,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ingress出现之前，服务暴露是这样的："><span class="nav-number">1.0.1.</span> <span class="nav-text">ingress出现之前，服务暴露是这样的：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ingress出现之后，服务暴露是这样的："><span class="nav-number">1.0.2.</span> <span class="nav-text">ingress出现之后，服务暴露是这样的：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ingress格式"><span class="nav-number">2.</span> <span class="nav-text">Ingress格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单服务Ingress"><span class="nav-number">2.0.1.</span> <span class="nav-text">单服务Ingress</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由到多服务的Ingress"><span class="nav-number">2.0.2.</span> <span class="nav-text">路由到多服务的Ingress</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟主机Ingress"><span class="nav-number">2.0.3.</span> <span class="nav-text">虚拟主机Ingress</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ingress出现之前，服务暴露是这样的："><span class="nav-number">1.0.1.</span> <span class="nav-text">ingress出现之前，服务暴露是这样的：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ingress出现之后，服务暴露是这样的："><span class="nav-number">1.0.2.</span> <span class="nav-text">ingress出现之后，服务暴露是这样的：</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Ingress格式"><span class="nav-number">2.</span> <span class="nav-text">Ingress格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单服务Ingress"><span class="nav-number">2.0.1.</span> <span class="nav-text">单服务Ingress</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由到多服务的Ingress"><span class="nav-number">2.0.2.</span> <span class="nav-text">路由到多服务的Ingress</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟主机Ingress"><span class="nav-number">2.0.3.</span> <span class="nav-text">虚拟主机Ingress</span></a></li></ol></li></div>
             
 
           </div>
